@@ -1,4 +1,4 @@
-# Informatics QA LiveSync
+# QA LiveSync
 
 Implements **SRS V1.5**, which supersedes V1.1/V1.2. It is a multi-project QA dashboard with the hierarchy **Home → Project → Main Module → Submodules · Overall Dashboard · Detailed Dashboard**, discovered from approved Google Drive mappings.
 

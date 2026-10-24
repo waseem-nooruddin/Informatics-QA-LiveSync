@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Logo, PRODUCT_NAME } from '../components/Brand';
+import { PRODUCT_NAME } from '../components/Brand';
 
-/** `/` — official logo, approved title, one prominent Open Dashboard button; no login form (SRS V1.5 §5.6). */
+/** `/` — product title and one prominent Open Dashboard button; no login form (SRS V1.5 §5.6). */
 export function Home() {
   useEffect(() => {
     document.title = PRODUCT_NAME;
@@ -16,7 +16,6 @@ export function Home() {
             <span className="hidden text-xs font-semibold tracking-[0.16em] text-sky uppercase sm:inline">Multi-project QA intelligence</span>
           </header>
           <div className="flex max-w-3xl flex-col gap-6">
-            <Logo size="hero" onDark />
             <h1 className="text-[clamp(2.4rem,5.6vw,4rem)] leading-[1.04] font-extrabold tracking-[-0.025em]">{PRODUCT_NAME}</h1>
             <p className="max-w-2xl text-lg leading-relaxed text-navy-ink-2">
               Validated test case and defect intelligence for every project, synchronized from your Google Drive and OneDrive sources and published only after five automated checks pass.
