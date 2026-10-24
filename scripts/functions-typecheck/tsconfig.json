@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": [],
+    "baseUrl": "../..",
+    "noUncheckedIndexedAccess": false,
+    "paths": {
+      "npm:@supabase/supabase-js@2.45.4": ["node_modules/@supabase/supabase-js"],
+      "https://cdn.sheetjs.com/xlsx-0.20.3/package/xlsx.mjs": ["node_modules/xlsx"]
+    }
+  },
+  "include": ["deno.d.ts", "../../supabase/functions/**/*.ts"]
+}

@@ -1,0 +1,164 @@
+@import 'tailwindcss';
+
+/* Informatics QA LiveSync — approved UI v1 (docs/approvals/ui-v1.md): navy #0B2858, white,
+   sky #38BDF8 (accent fills only, never body text). Chart colours validated for CVD separation. */
+:root {
+  color-scheme: light;
+  --canvas: #f5f8fc;
+  --surface: #ffffff;
+  --surface-2: #eef3f9;
+  --ink: #0b1f44;
+  --ink-2: #4a5b7a;
+  --ink-3: #5b6b88;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
+  --navy: #0b2858;
+  --navy-2: #13366f;
+  --navy-ink: #ffffff;
+  --navy-ink-2: #d6e4f5;
+  --sky: #38bdf8;
+  --sky-soft: #e0f2fe;
+  --sky-ink: #0b2858;
+  --accent: #1f5fae;
+  --accent-soft: #e0f2fe;
+  --focus: #0284c7;
+  --primary: #0b2858;
+  --primary-hover: #13366f;
+  --primary-ink: #ffffff;
+  --other: #64748b;
+
+  /* Test status — Passed/Failed/Blocked/Not Tested (FR-DES-002), adjacent CVD ΔE ≥ 16 */
+  --st-passed: #3fb86a;
+  --st-failed: #b83232;
+  --st-blocked: #e8960f;
+  --st-nottested: #2a78d6;
+  /* Defect lifecycle (categorical slots 2,1) */
+  --lc-open: #eb6834;
+  --lc-closed: #2a78d6;
+  /* Severity ordinal (Low → Critical) and priority ordinal (P4 → P1) */
+  --sev-1: #e8957a; --sev-2: #d9654a; --sev-3: #b83a2e; --sev-4: #7f1d1d;
+  --pri-1: #86b6ef; --pri-2: #5598e7; --pri-3: #256abf; --pri-4: #104281;
+  --unspecified: #9aa3b2;
+  /* Categorical (module identity), fixed order */
+  --cat-1: #2a78d6; --cat-2: #eb6834; --cat-3: #1baf7a; --cat-4: #eda100;
+  --cat-5: #e87ba4; --cat-6: #008300; --cat-7: #6250d6; --cat-8: #e34948; --cat-other: #9aa3b2;
+
+  --ok: #157a3e; --ok-soft: #e6f4ea;
+  --warn: #8a5a00; --warn-soft: #fdf3dc;
+  --bad: #a42828; --bad-soft: #fbe9e9;
+  --info: #1f5fb4; --info-soft: #e8effb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --canvas: #08142b; --surface: #0f1e3d; --surface-2: #15284d; --ink: #f1f6fc; --ink-2: #c3d2e6; --ink-3: #9fb2cc;
+    --line: #1f3561; --line-strong: #2c4677; --navy: #0b2858; --navy-2: #13366f; --navy-ink: #ffffff; --navy-ink-2: #c3d2e6;
+    --sky: #38bdf8; --sky-soft: #0c3554; --sky-ink: #0b2858; --other: #94a3b8;
+    --accent: #7dd3fc; --accent-soft: #0c3554; --focus: #7dd3fc; --primary: #38bdf8; --primary-hover: #7dd3fc; --primary-ink: #0b2858;
+    --st-passed: #3aae68; --st-failed: #c43e3e; --st-blocked: #c98500; --st-nottested: #3987e5;
+    --lc-open: #d95926; --lc-closed: #3987e5;
+    --sev-1: #9e2c2c; --sev-2: #c4473a; --sev-3: #de7356; --sev-4: #f0a58c;
+    --pri-1: #184f95; --pri-2: #256abf; --pri-3: #3987e5; --pri-4: #86b6ef;
+    --unspecified: #6b7486;
+    --cat-1: #3987e5; --cat-2: #d95926; --cat-3: #199e70; --cat-4: #c98500; --cat-5: #d55181; --cat-6: #008300; --cat-7: #9085e9; --cat-8: #e66767; --cat-other: #6b7486;
+    --ok: #6fd394; --ok-soft: #12291c; --warn: #f2c25b; --warn-soft: #2d2410; --bad: #f08a8a; --bad-soft: #321616; --info: #8fb8f5; --info-soft: #172741;
+  }
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --canvas: #08142b; --surface: #0f1e3d; --surface-2: #15284d; --ink: #f1f6fc; --ink-2: #c3d2e6; --ink-3: #9fb2cc;
+  --line: #1f3561; --line-strong: #2c4677; --navy: #0b2858; --navy-2: #13366f; --navy-ink: #ffffff; --navy-ink-2: #c3d2e6;
+  --sky: #38bdf8; --sky-soft: #0c3554; --sky-ink: #0b2858; --other: #94a3b8;
+  --accent: #7dd3fc; --accent-soft: #0c3554; --focus: #7dd3fc; --primary: #38bdf8; --primary-hover: #7dd3fc; --primary-ink: #0b2858;
+  --st-passed: #3aae68; --st-failed: #c43e3e; --st-blocked: #c98500; --st-nottested: #3987e5;
+  --lc-open: #d95926; --lc-closed: #3987e5;
+  --sev-1: #9e2c2c; --sev-2: #c4473a; --sev-3: #de7356; --sev-4: #f0a58c;
+  --pri-1: #184f95; --pri-2: #256abf; --pri-3: #3987e5; --pri-4: #86b6ef;
+  --unspecified: #6b7486;
+  --cat-1: #3987e5; --cat-2: #d95926; --cat-3: #199e70; --cat-4: #c98500; --cat-5: #d55181; --cat-6: #008300; --cat-7: #9085e9; --cat-8: #e66767; --cat-other: #6b7486;
+  --ok: #6fd394; --ok-soft: #12291c; --warn: #f2c25b; --warn-soft: #2d2410; --bad: #f08a8a; --bad-soft: #321616; --info: #8fb8f5; --info-soft: #172741;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-navy-ink: var(--navy-ink);
+  --color-navy-ink-2: var(--navy-ink-2);
+  --color-sky: var(--sky);
+  --color-sky-soft: var(--sky-soft);
+  --color-sky-ink: var(--sky-ink);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-ink: var(--primary-ink);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+}
+
+html,
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-2) 0%, var(--line) 50%, var(--surface-2) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: 8px;
+}
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+/* Approved animations (UI v1 item 5): restrained transitions only. */
+.nav-collapse { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 200ms ease; }
+.nav-collapse[data-open='true'] { grid-template-rows: 1fr; }
+.nav-collapse > * { overflow: hidden; }
+dialog[open] { animation: dialog-in 160ms ease-out; }
+@keyframes dialog-in { from { opacity: 0; transform: translateY(6px) scale(0.985); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+.recharts-wrapper:focus, .recharts-surface:focus { outline: none; }
+
+@media print {
+  aside, .no-print { display: none !important; }
+  main { padding: 0 !important; }
+  body { background: #fff; }
+  .print-break { break-inside: avoid; }
+}

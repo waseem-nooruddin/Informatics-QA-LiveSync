@@ -1,0 +1,28 @@
+{
+  "name": "qa-livesync",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "test": "npm run test -w @qals/core",
+    "typecheck": "npm run typecheck -w @qals/core && npm run typecheck -w @qals/web && tsc -p scripts/functions-typecheck/tsconfig.json",
+    "build": "npm run build -w @qals/web",
+    "dev": "npm run dev -w @qals/web",
+    "e2e": "playwright test",
+    "db:start": "supabase start",
+    "db:reset": "supabase db reset",
+    "db:test": "supabase test db",
+    "functions:serve": "supabase functions serve --env-file supabase/.env.local",
+    "sync:core": "node scripts/sync-core.mjs",
+    "fixtures": "node scripts/make-fixtures.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "supabase": "^2.0.0",
+    "typescript": "^5.6.0"
+  }
+}
