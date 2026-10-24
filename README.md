@@ -95,4 +95,4 @@ Do **not** run `seed.sql` in production. The access model is Option A (public ag
 ## Open items
 See `docs/CHECKLIST.md`:
 - **Google Cloud:** provide the credentials above, then create the first project from the recorded Drive folder.
-- **Hosting:** create a hosted Supabase project (the GitHub repo is `waseem-nooruddin/Informatics-QA-LiveSync`).
+- **Hosting:** create a hosted Supabase project (the GitHub repo is `waseem-nooruddin/QA-LiveSync`).

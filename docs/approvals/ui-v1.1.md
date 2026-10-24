@@ -13,4 +13,4 @@
 - **Unchanged:** the colour palette (navy / white / sky), the layout, the navigation hierarchy and the animations approved in UI v1.
 
 ## Note
-This intentionally departs from SRS V1.5 §3 (official logo, "Informatics QA LiveSync") at the owner's direction. The repository and GitHub Pages URL still contain "Informatics-QA-LiveSync" until the repository is renamed.
+This intentionally departs from SRS V1.5 §3 (official logo, "Informatics QA LiveSync") at the owner's direction. The repository was renamed to `QA-LiveSync`; the site is now https://waseem-nooruddin.github.io/QA-LiveSync/.

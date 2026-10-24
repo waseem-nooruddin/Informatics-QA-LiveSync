@@ -73,5 +73,5 @@ Last audit: 2026-10-24.
 1. ~~Logo~~ — removed at the owner's request (2026-10-24); product name is "QA LiveSync".
 2. **Project Drive folder (deferred by owner):** `https://drive.google.com/drive/folders/1de5c5dFZdaI57qbnrU7ho5FXAJM388P0` is the intended source root for **+ Add New Project** once Google credentials exist.
 3. **Google Cloud:** enable the Picker and Drive APIs; create a browser API key (`GOOGLE_PICKER_API_KEY`) and an OAuth web client; set `GOOGLE_CLOUD_PROJECT_NUMBER`. This unblocks the live verification of FR-GD-001/002/004 and AT-08.
-4. **Hosting:** GitHub repo `waseem-nooruddin/Informatics-QA-LiveSync` (public) provided; hosted Supabase project still needed for AT-24.
+4. **Hosting:** GitHub repo `waseem-nooruddin/QA-LiveSync` (public) provided; hosted Supabase project still needed for AT-24.
 5. **Access model:** Option A is accepted for now. Revisit before confidential data is published (§12).
