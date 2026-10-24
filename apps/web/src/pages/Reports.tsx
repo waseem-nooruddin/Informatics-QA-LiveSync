@@ -7,7 +7,7 @@ import type { PublicSnapshot } from '../lib/types';
 /** Every export carries project, scope, snapshot id, as-of time, ruleset and validation state. */
 function meta(s: PublicSnapshot, scope: string): [string, string][] {
   return [
-    ['Product', 'Informatics QA LiveSync'],
+    ['Product', 'QA LiveSync'],
     ['Project', `${s.project_name} (${s.project_id})`],
     ['Scope', scope],
     ['Snapshot ID', s.snapshot_id],

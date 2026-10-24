@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* Informatics QA LiveSync — approved UI v1 (docs/approvals/ui-v1.md): navy #0B2858, white,
+/* QA LiveSync — approved UI v1 (name/logo amended in ui-v1.1) (docs/approvals/ui-v1.md): navy #0B2858, white,
    sky #38BDF8 (accent fills only, never body text). Chart colours validated for CVD separation. */
 :root {
   color-scheme: light;

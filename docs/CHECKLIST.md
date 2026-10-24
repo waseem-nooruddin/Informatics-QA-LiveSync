@@ -1,4 +1,4 @@
-# Supervisor checklist — Informatics QA LiveSync (SRS V1.5)
+# Supervisor checklist — QA LiveSync (SRS V1.5)
 
 Statuses: Not Started · In Progress · Blocked · Implemented · Tested · **Verified** (evidence below) · Deployed.
 "Verified" means a test or recorded approval proves it. Writing the code is not enough.
@@ -25,7 +25,7 @@ Last audit: 2026-10-24.
 
 | Req | Status | Evidence |
 |---|---|---|
-| AT-05 Homepage: official logo, branding, Open Dashboard | Verified | Official logo supplied 2026-10-24 → `apps/web/src/assets/brand/` (original kept unchanged); E3 "AT-05" |
+| AT-05 Homepage: branding, Open Dashboard | Verified | Owner decision 2026-10-24 (`docs/approvals/ui-v1.1.md`): company name and all logos removed; E3 "AT-05" asserts no company name and no images |
 | AT-06 Project Hub lists projects, no hardcoded limits | Verified | E3 "AT-06" |
 | AT-07 Sidebar: Project → Main Module → Submodules + Overall + Detailed + "+ Add" | Verified | E3 "AT-07/AT-11/AT-14" |
 | AT-08 Hierarchy from approved Drive mapping, not labels | Tested | E1 hierarchy suite. The live Drive folder walk needs Google credentials (see FR-GD). |
@@ -70,7 +70,7 @@ Last audit: 2026-10-24.
 | FR-GD-008 OneDrive remains supported | Tested | Microsoft adapter unchanged; typechecked (E4) |
 
 ## Open items (owner action)
-1. ~~Logo~~ — supplied and in place (2026-10-24). A vector (SVG) version would render sharper at large sizes.
+1. ~~Logo~~ — removed at the owner's request (2026-10-24); product name is "QA LiveSync".
 2. **Project Drive folder (deferred by owner):** `https://drive.google.com/drive/folders/1de5c5dFZdaI57qbnrU7ho5FXAJM388P0` is the intended source root for **+ Add New Project** once Google credentials exist.
 3. **Google Cloud:** enable the Picker and Drive APIs; create a browser API key (`GOOGLE_PICKER_API_KEY`) and an OAuth web client; set `GOOGLE_CLOUD_PROJECT_NUMBER`. This unblocks the live verification of FR-GD-001/002/004 and AT-08.
 4. **Hosting:** GitHub repo `waseem-nooruddin/Informatics-QA-LiveSync` (public) provided; hosted Supabase project still needed for AT-24.

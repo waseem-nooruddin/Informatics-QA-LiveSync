@@ -46,11 +46,12 @@ test.describe.configure({ mode: 'serial' });
 let umConn = '';
 let dieConn = '';
 
-test('AT-05: homepage shows the product name, logo slot and Open Dashboard; no login form', async ({ page }) => {
+test('AT-05: homepage shows the product name and Open Dashboard; no company name, no logo, no login form', async ({ page }) => {
   await page.goto('/');
-  await expect(page).toHaveTitle('Informatics QA LiveSync');
-  await expect(page.getByRole('heading', { name: 'Informatics QA LiveSync' })).toBeVisible();
-  await expect(page.getByRole('img', { name: /Informatics/ }).first()).toBeVisible();
+  await expect(page).toHaveTitle('QA LiveSync');
+  await expect(page.getByRole('heading', { name: 'QA LiveSync' })).toBeVisible();
+  await expect(page.getByText(/Informatics/i)).toHaveCount(0);
+  await expect(page.locator('img')).toHaveCount(0);
   await expect(page.locator('input[type=password]')).toHaveCount(0);
   await page.getByRole('link', { name: 'Open Dashboard' }).click();
   await expect(page).toHaveURL(/\/projects$/);
